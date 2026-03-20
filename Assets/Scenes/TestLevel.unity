@@ -145,7 +145,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86208672}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8f77e7651429c2f429eb268eb27f3a19, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -257,7 +257,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311975427}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8f77e7651429c2f429eb268eb27f3a19, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -269,8 +269,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!23 &311975429
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -496,7 +496,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423941509}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8f77e7651429c2f429eb268eb27f3a19, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -599,8 +599,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a8b1a5a5692c64a9b6eb70dd0f21c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  move: {fileID: 7998037704653937686, guid: c02dfcf764c14e047a70a80d0664350e, type: 3}
-  speed: 2
+  speed: 8
+  acceleration: 8
+  jumpSpeed: 220
 --- !u!114 &448989161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,7 +663,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485214527}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8f77e7651429c2f429eb268eb27f3a19, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -674,8 +675,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!23 &485214529
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -798,7 +799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 46ebd3cb12b23ca47a99ecb104aea1c4, type: 3}
       propertyPath: m_Name
-      value: player
+      value: Model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -836,7 +837,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789146733}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8f77e7651429c2f429eb268eb27f3a19, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -997,7 +998,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833035122}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8f77e7651429c2f429eb268eb27f3a19, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1009,8 +1010,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!23 &833035124
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1109,7 +1110,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200464293}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8f77e7651429c2f429eb268eb27f3a19, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1121,8 +1122,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!23 &1200464295
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1221,7 +1222,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772225914}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8f77e7651429c2f429eb268eb27f3a19, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1333,7 +1334,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993169275}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8f77e7651429c2f429eb268eb27f3a19, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1483,6 +1484,14 @@ PrefabInstance:
     - target: {fileID: 4479131996559555701, guid: c9b16c44c4109ce45995ed6e5fbdf3de, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341225558625659421, guid: c9b16c44c4109ce45995ed6e5fbdf3de, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341225558625659421, guid: c9b16c44c4109ce45995ed6e5fbdf3de, type: 3}
+      propertyPath: m_LinearDamping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8668070766125408027, guid: c9b16c44c4109ce45995ed6e5fbdf3de, type: 3}
       propertyPath: m_LocalPosition.x
