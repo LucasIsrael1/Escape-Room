@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour {
-    [SerializeField] private float speed = 8;
-    [SerializeField] private float jumpSpeed = 20;
-    [SerializeField] private float gravity = 2;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpSpeed;
+    [SerializeField] private float gravity;
+    [SerializeField] private float pushForce;
 
     private CharacterController controller;
 
@@ -38,5 +40,20 @@ public class PlayerController : MonoBehaviour {
         {
             movement.y = jumpSpeed;
         }
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody rb = hit.collider.attachedRigidbody;
+        if (rb == null) return;
+        Vector3 forceDirection = hit.gameObject.transform.position - transform.position;
+        if (forceDirection.y > 0.5f) return; 
+        if (Math.Abs(forceDirection.x) < 0.5) forceDirection.x = 0;
+        else forceDirection.x = (float)Math.Floor(forceDirection.x * 3) / 3f;
+        forceDirection.y = 0;
+        if (Math.Abs(forceDirection.z) < 0.5) forceDirection.z = 0;
+        else forceDirection.z = (float)Math.Floor(forceDirection.z * 3) / 3f;
+        forceDirection.Normalize();
+        rb.AddForceAtPosition(forceDirection * pushForce, transform.position, ForceMode.Impulse);
     }
 }
