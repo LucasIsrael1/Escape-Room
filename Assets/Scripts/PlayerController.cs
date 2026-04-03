@@ -1,19 +1,23 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System;
 
 public class PlayerController : MonoBehaviour {
-    private Rigidbody rb;
+    [SerializeField] private float speed = 8;
+    [SerializeField] private float jumpSpeed = 20;
+    [SerializeField] private float gravity = 2;
+
+    private CharacterController controller;
 
     private InputAction moveAction;
-    
-    [SerializeField] private float speed = 8;
-    [SerializeField] private float acceleration = 8;
-    private Vector3 movementInput = new Vector3(0, 0, 0);
+    private InputAction jumpAction;
+    private Vector2 movementInput = new(0, 0);
+    private Vector3 movement = new(0, 0, 0);
 
     void Start() {
-        rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
         moveAction = InputSystem.actions.FindAction("Move");
+        jumpAction = InputSystem.actions.FindAction("Jump");
+        jumpAction.started += Jump;
     }
 
     void Update() {
@@ -21,7 +25,18 @@ public class PlayerController : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        Vector3 targetVelocity = new Vector3(movementInput.x * speed, 0, movementInput.y * speed);
-        rb.linearVelocity = Vector3.MoveTowards(rb.linearVelocity, targetVelocity, Time.fixedDeltaTime * acceleration);
+        movement.x = movementInput.x * speed * Time.fixedDeltaTime;
+        movement.z = movementInput.y * speed * Time.fixedDeltaTime;
+        if (controller.isGrounded && movement.y < 0) movement.y = 0;
+        movement.y -= gravity * Time.fixedDeltaTime;
+        controller.Move(movement);
+    }
+
+    void Jump(InputAction.CallbackContext context)
+    {
+        if (controller.isGrounded)
+        {
+            movement.y = jumpSpeed;
+        }
     }
 }
