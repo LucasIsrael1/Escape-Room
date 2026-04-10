@@ -67,5 +67,11 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Escape Room.slnx"
+    "dotnet.defaultSolution": "Escape Room.slnx",
+    "csharp-dev-tools.roslyn.projectOrSolutionFiles": [
+        "c:\\Users\\lucas\\Documents\\Unity\\Escape Room\\Escape Room.sln",
+        "c:\\Users\\lucas\\Documents\\Unity\\Escape Room\\Escape Room.slnx",
+        "c:\\Users\\lucas\\Documents\\Unity\\Escape Room\\Assembly-CSharp-Editor.csproj",
+        "c:\\Users\\lucas\\Documents\\Unity\\Escape Room\\Assembly-CSharp.csproj"
+    ]
 }
