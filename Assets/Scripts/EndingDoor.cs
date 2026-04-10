@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LevelDoor : MonoBehaviour
+public class EndingDoor : MonoBehaviour
 {
     private Animator animator;
     private Collider coll;

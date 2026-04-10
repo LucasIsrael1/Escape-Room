@@ -18,9 +18,22 @@ public class PlayerController : MonoBehaviour {
 
     void Start() {
         controller = GetComponent<CharacterController>();
+    }
+
+    void OnEnable()
+    {
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        moveAction.Enable();
+        jumpAction.Enable();
         jumpAction.started += Jump;
+    }
+
+    void OnDisable()
+    {
+        moveAction.Disable();
+        jumpAction.Disable();
+        jumpAction.started -= Jump;
     }
 
     void Update() {

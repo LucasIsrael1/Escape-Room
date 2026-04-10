@@ -1,13 +1,16 @@
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
 
+    
+    [SerializeField] private EndingDoor door;
     [SerializeField] private TMP_Text berryLabel;
-    [SerializeField] private LevelDoor door;
 
     private int berryCount = 0;
     private int neededBerries;
