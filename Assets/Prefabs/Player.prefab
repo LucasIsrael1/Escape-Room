@@ -75,6 +75,7 @@ MonoBehaviour:
   jumpSpeed: 0.15
   gravity: 0.4
   pushForce: 1
+  cameraAxisSpeedBoost: 1.2
 --- !u!1001 &2441979931849508175
 PrefabInstance:
   m_ObjectHideFlags: 0

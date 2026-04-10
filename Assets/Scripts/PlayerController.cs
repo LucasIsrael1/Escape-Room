@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float jumpSpeed;
     [SerializeField] private float gravity;
     [SerializeField] private float pushForce;
+    [SerializeField] private float cameraAxisSpeedBoost;
 
     private CharacterController controller;
 
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate() {
         movement.x = movementInput.x * speed * Time.fixedDeltaTime;
-        movement.z = movementInput.y * speed * Time.fixedDeltaTime;
+        movement.z = movementInput.y * speed * Time.fixedDeltaTime * cameraAxisSpeedBoost;
         if (controller.isGrounded && movement.y < 0) movement.y = 0;
         movement.y -= gravity * Time.fixedDeltaTime;
         controller.Move(movement);
