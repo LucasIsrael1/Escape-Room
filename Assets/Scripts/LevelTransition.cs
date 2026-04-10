@@ -1,7 +1,5 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using System.Collections;
 
 public class LevelTransition : MonoBehaviour

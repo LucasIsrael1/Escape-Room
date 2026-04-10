@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EndingDoor : MonoBehaviour
+public class Door : MonoBehaviour
 {
     private Animator animator;
     private Collider coll;
@@ -15,5 +15,11 @@ public class EndingDoor : MonoBehaviour
     {
         animator.SetTrigger("Open");
         coll.enabled = false;
+    }
+
+    public void Close()
+    {
+        animator.SetTrigger("Close");
+        coll.enabled = true;
     }
 }

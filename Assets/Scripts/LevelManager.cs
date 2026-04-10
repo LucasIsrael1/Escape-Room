@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 
     
-    [SerializeField] private EndingDoor door;
+    [SerializeField] private Door door;
     [SerializeField] private TMP_Text berryLabel;
 
     private int berryCount = 0;
