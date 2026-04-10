@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour {
 
     private InputAction moveAction;
     private InputAction jumpAction;
-    private Vector2 movementInput = new(0, 0);
-    private Vector3 movement = new(0, 0, 0);
+    private Vector2 movementInput = Vector2.zero;
+    private Vector3 movement = Vector3.zero;
 
     void Start() {
         controller = GetComponent<CharacterController>();
@@ -26,14 +26,12 @@ public class PlayerController : MonoBehaviour {
         jumpAction = InputSystem.actions.FindAction("Jump");
         moveAction.Enable();
         jumpAction.Enable();
-        jumpAction.started += Jump;
     }
 
     void OnDisable()
     {
         moveAction.Disable();
         jumpAction.Disable();
-        jumpAction.started -= Jump;
     }
 
     void Update() {
@@ -43,31 +41,32 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate() {
         movement.x = movementInput.x * speed * Time.fixedDeltaTime;
         movement.z = movementInput.y * speed * Time.fixedDeltaTime * cameraAxisSpeedBoost;
-        if (controller.isGrounded && movement.y < 0) movement.y = 0;
-        movement.y -= gravity * Time.fixedDeltaTime;
-        controller.Move(movement);
-    }
-
-    void Jump(InputAction.CallbackContext context)
-    {
         if (controller.isGrounded)
         {
-            movement.y = jumpSpeed;
+            if (movement.y < 0) movement.y = 0;
+            if (jumpAction.IsPressed()) movement.y = jumpSpeed;
         }
+        movement.y -= gravity * Time.fixedDeltaTime;
+        controller.Move(movement);
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Rigidbody rb = hit.collider.attachedRigidbody;
         if (rb == null) return;
+
         Vector3 forceDirection = hit.gameObject.transform.position - transform.position;
-        if (forceDirection.y > 0.5f) return; 
-        if (Math.Abs(forceDirection.x) < 0.5) forceDirection.x = 0;
-        else forceDirection.x = (float)Math.Floor(forceDirection.x * 3) / 3f;
+        if (forceDirection.y > 0.5f) return;
+        
+        forceDirection.x = GetPushingForce(forceDirection.x);
+        forceDirection.z = GetPushingForce(forceDirection.z);
         forceDirection.y = 0;
-        if (Math.Abs(forceDirection.z) < 0.5) forceDirection.z = 0;
-        else forceDirection.z = (float)Math.Floor(forceDirection.z * 3) / 3f;
-        forceDirection.Normalize();
-        rb.AddForceAtPosition(forceDirection * pushForce, transform.position, ForceMode.Impulse);
+        rb.AddForceAtPosition(forceDirection.normalized * pushForce, transform.position, ForceMode.Impulse);
+    }
+
+    private float GetPushingForce(float force)
+    {
+        if (Math.Abs(force) < 0.5) return 0;
+        return (float)Math.Floor(force * 3) / 3f;
     }
 }
