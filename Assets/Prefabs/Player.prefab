@@ -72,9 +72,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   speed: 3
-  jumpSpeed: 0.15
+  jumpSpeed: 0.135
   gravity: 0.4
-  pushForce: 1
+  pushForce: 0.75
   cameraAxisSpeedBoost: 1.2
 --- !u!1001 &2441979931849508175
 PrefabInstance:

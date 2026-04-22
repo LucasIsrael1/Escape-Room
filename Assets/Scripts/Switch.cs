@@ -12,7 +12,7 @@ public class Switch : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
         GameObject obj = collider.gameObject;
-        if (!obj.CompareTag("Player") && !obj.CompareTag("Box")) return;
+        if (!obj.CompareTag("Box")) return;
         overlappingObjects.Add(obj);
         if (overlappingObjects.Count == 1) controller.SwitchPressed();
     }
@@ -20,7 +20,7 @@ public class Switch : MonoBehaviour
     void OnTriggerExit(Collider collider)
     {
         GameObject obj = collider.gameObject;
-        if (!obj.CompareTag("Player") && !obj.CompareTag("Box")) return;
+        if (!obj.CompareTag("Box")) return;
         overlappingObjects.Remove(obj);
         if (overlappingObjects.Count == 0) controller.SwitchUnpressed();
     }
