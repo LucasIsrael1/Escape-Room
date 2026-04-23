@@ -20,7 +20,7 @@ public class BerryBush : MonoBehaviour
         if (!hasBerries || !collider.gameObject.CompareTag("Player")) return;
         hasBerries = false;
         updateMaterial(baseMaterial);
-        LevelManager.instance.AddBerries(1);
+        LevelManager.AddBerries(1);
     }
 
     private void updateMaterial(Material material)

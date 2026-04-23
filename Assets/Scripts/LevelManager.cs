@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager instance;
+    private static LevelManager instance;
     
     [SerializeField] private Door door;
     [SerializeField] private TMP_Text berryLabel;
@@ -19,6 +19,12 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         instance = this;
     }
 
@@ -29,13 +35,13 @@ public class LevelManager : MonoBehaviour
         UpdateLabel();
     }
 
-    public void AddBerries(int count)
+    public static void AddBerries(int count)
     {
-        berryCount += count;
-        UpdateLabel();
-        if (berryCount >= neededBerries)
+        instance.berryCount += count;
+        instance.UpdateLabel();
+        if (instance.berryCount >= instance.neededBerries)
         {
-            door.Open();
+            instance.door.Open();
         }
     }
 
@@ -44,9 +50,9 @@ public class LevelManager : MonoBehaviour
         berryLabel.text = "Berries: " + berryCount + "/" + neededBerries;
     }
 
-    public void LoadScene(String sceneName)
+    public static void LoadScene(String sceneName)
     {
-        StartCoroutine(LoadSceneCorountine(sceneName));
+        instance.StartCoroutine(instance.LoadSceneCorountine(sceneName));
     }
     
     private IEnumerator LoadSceneCorountine(String sceneName)
@@ -56,7 +62,7 @@ public class LevelManager : MonoBehaviour
         yield return SceneManager.LoadSceneAsync(sceneName);
     }
 
-    public void GameOver() {
-        gameOver.GameOver();
+    public static void GameOver() {
+        instance.gameOver.GameOver();
     }
 }

@@ -7,6 +7,7 @@ public class GameOverSystem : MonoBehaviour
 
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private FadeOverlay fadeOverlay;
+    private LevelManager levelManager;
     private GameObject player;
 
     void Start()
@@ -25,12 +26,12 @@ public class GameOverSystem : MonoBehaviour
     public void Restart()
     {
         gameOverScreen.SetActive(false);
-        LevelManager.instance.LoadScene(SceneManager.GetActiveScene().name);
+        LevelManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ReturnToMenu()
     {
         gameOverScreen.SetActive(false);
-        LevelManager.instance.LoadScene("Menu");
+        LevelManager.LoadScene("Menu");
     }
 }

@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class LevelTransition : MonoBehaviour
 {
@@ -10,6 +8,6 @@ public class LevelTransition : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
         if (string.IsNullOrEmpty(nextLevel) || !collider.gameObject.CompareTag("Player")) return;
-        LevelManager.instance.LoadScene(nextLevel);
+        LevelManager.LoadScene(nextLevel);
     }
 }
