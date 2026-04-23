@@ -7,7 +7,7 @@ public class FadeOverlay : MonoBehaviour
 {
     [SerializeField] float duration;
     private Image image;
-
+    
     void Start()
     {
         image = GetComponent<Image>();

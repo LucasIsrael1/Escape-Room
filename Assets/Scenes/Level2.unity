@@ -1095,6 +1095,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &731596902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 487144649102637807, guid: ad56e2572b35aea41be7f4442129df94, type: 3}
+  m_PrefabInstance: {fileID: 731596899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8be056d7e4f624793c3636dad1ceba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameOverSystem
 --- !u!4 &738847323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7629836654535194530, guid: 9ccc785a76c3ced47a0fe05fba2288b5, type: 3}
@@ -2336,6 +2347,7 @@ MonoBehaviour:
   door: {fileID: 1933882052}
   berryLabel: {fileID: 731596901}
   fadeOverlay: {fileID: 731596900}
+  gameOver: {fileID: 731596902}
 --- !u!1001 &1933882051
 PrefabInstance:
   m_ObjectHideFlags: 0

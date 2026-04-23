@@ -1,5 +1,3 @@
-using System.Collections;
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -12,8 +10,6 @@ public class PauseSystem : MonoBehaviour
     private bool isPaused = false;
 
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private FadeOverlay fadeOverlay;
-
 
     void Start()
     {
@@ -23,7 +19,7 @@ public class PauseSystem : MonoBehaviour
 
     void OnEnable()
     {
-        pauseAction = InputSystem.actions.FindAction("pause");
+        pauseAction = InputSystem.actions.FindAction("Pause");
         pauseAction.performed += OnPause;
         pauseAction.Enable();
     }

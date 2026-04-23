@@ -1,9 +1,9 @@
-using UnityEngine;
+using System;
+using System.Collections;
 using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
-using System;
 
 public class LevelManager : MonoBehaviour
 {
@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Door door;
     [SerializeField] private TMP_Text berryLabel;
     [SerializeField] private FadeOverlay fadeOverlay;
+    [SerializeField] private GameOverSystem gameOver;
     private GameObject player;
 
     private int berryCount = 0;
@@ -46,13 +47,17 @@ public class LevelManager : MonoBehaviour
 
     public void LoadScene(String sceneName)
     {
-        StartCoroutine(LoadSceneAsync(sceneName));
+        StartCoroutine(LoadSceneCorountine(sceneName));
     }
     
-    private IEnumerator LoadSceneAsync(String sceneName)
+    private IEnumerator LoadSceneCorountine(String sceneName)
     {
         player.SetActive(false);
         yield return fadeOverlay.FadeOut();
         yield return SceneManager.LoadSceneAsync(sceneName);
+    }
+
+    public void GameOver() {
+        gameOver.GameOver();
     }
 }
