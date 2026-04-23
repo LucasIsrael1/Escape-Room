@@ -13,13 +13,8 @@ public class Door : MonoBehaviour
 
     public void Open()
     {
+        SoundManager.PlaySound("win");
         animator.SetTrigger("Open");
         coll.enabled = false;
-    }
-
-    public void Close()
-    {
-        animator.SetTrigger("Close");
-        coll.enabled = true;
     }
 }

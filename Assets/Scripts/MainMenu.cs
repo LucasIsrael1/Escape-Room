@@ -11,17 +11,20 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        ReturnToMain();
+        mainScreen.SetActive(true);
+        levelSelectScreen.SetActive(false);
     }
 
     public void OpenLevelSelect()
     {
+        SoundManager.PlaySound("button");
         mainScreen.SetActive(false);
         levelSelectScreen.SetActive(true);
     }
 
     public void ReturnToMain()
     {
+        SoundManager.PlaySound("button");
         mainScreen.SetActive(true);
         levelSelectScreen.SetActive(false);
     }

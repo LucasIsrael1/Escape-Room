@@ -11,6 +11,7 @@ public class SwitchController : MonoBehaviour
         pressedSwitches += 1;
         if (pressedSwitches >= neededSwitches)
         {
+            SoundManager.PlaySound("switch");
             block.Activate();
         }
     }
@@ -19,6 +20,7 @@ public class SwitchController : MonoBehaviour
     {
         if (pressedSwitches == neededSwitches)
         {
+            SoundManager.PlaySound("switch");
             block.Deactivate();
         }
         pressedSwitches -= 1;

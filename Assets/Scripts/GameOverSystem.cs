@@ -20,18 +20,21 @@ public class GameOverSystem : MonoBehaviour
     public void GameOver()
     {
         player.SetActive(false);
+        SoundManager.PlaySound("lose");
         gameOverScreen.SetActive(true);
     }
 
     public void Restart()
     {
         gameOverScreen.SetActive(false);
+        SoundManager.PlaySound("button");
         LevelManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ReturnToMenu()
     {
         gameOverScreen.SetActive(false);
+        SoundManager.PlaySound("button");
         LevelManager.LoadScene("Menu");
     }
 }

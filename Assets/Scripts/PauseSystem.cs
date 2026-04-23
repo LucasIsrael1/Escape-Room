@@ -38,6 +38,7 @@ public class PauseSystem : MonoBehaviour
     public void TogglePause()
     {
         isPaused = !isPaused;
+        SoundManager.PlaySound("button");
         if (isPaused)
         {
             Time.timeScale = 0;
@@ -52,12 +53,14 @@ public class PauseSystem : MonoBehaviour
 
     public void ResetLevel()
     {
+        SoundManager.PlaySound("button");
         if (isPaused) TogglePause();
         LevelManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ReturnToMenu()
     {
+        SoundManager.PlaySound("button");
         if (isPaused) TogglePause();
         LevelManager.LoadScene("Menu");
     }

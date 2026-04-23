@@ -7,6 +7,7 @@ public class LevelButton : MonoBehaviour
     [SerializeField] private String sceneName;
 
     public void OnClick() {
+        SoundManager.PlaySound("button");
         mainMenu.LoadScene(sceneName);
     }
 }

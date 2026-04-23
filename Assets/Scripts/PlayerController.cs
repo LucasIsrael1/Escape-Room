@@ -44,7 +44,11 @@ public class PlayerController : MonoBehaviour {
         if (controller.isGrounded)
         {
             if (movement.y < 0) movement.y = 0;
-            if (jumpAction.IsPressed()) movement.y = jumpSpeed;
+            if (jumpAction.IsPressed())
+            {
+                SoundManager.PlaySound("jump");
+                movement.y = jumpSpeed;
+            }
         }
         movement.y -= gravity * Time.fixedDeltaTime;
         controller.Move(movement);

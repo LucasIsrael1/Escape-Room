@@ -19,6 +19,7 @@ public class BerryBush : MonoBehaviour
     {
         if (!hasBerries || !collider.gameObject.CompareTag("Player")) return;
         hasBerries = false;
+        SoundManager.PlaySound("collect");
         updateMaterial(baseMaterial);
         LevelManager.AddBerries(1);
     }
