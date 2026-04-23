@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour {
         if (rb == null) return;
 
         Vector3 forceDirection = hit.gameObject.transform.position - transform.position;
-        if (forceDirection.y > 0.5f) return;
+        if (Math.Abs(forceDirection.y) > 0.5f) return;
         
         forceDirection.x = GetPushingForce(forceDirection.x);
         forceDirection.z = GetPushingForce(forceDirection.z);
