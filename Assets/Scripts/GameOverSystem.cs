@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameOverSystem : MonoBehaviour
@@ -29,5 +26,11 @@ public class GameOverSystem : MonoBehaviour
     {
         gameOverScreen.SetActive(false);
         LevelManager.instance.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ReturnToMenu()
+    {
+        gameOverScreen.SetActive(false);
+        LevelManager.instance.LoadScene("Menu");
     }
 }

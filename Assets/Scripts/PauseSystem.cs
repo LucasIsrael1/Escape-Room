@@ -55,4 +55,10 @@ public class PauseSystem : MonoBehaviour
         if (isPaused) TogglePause();
         LevelManager.instance.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void ReturnToMenu()
+    {
+        if (isPaused) TogglePause();
+        LevelManager.instance.LoadScene("Menu");
+    }
 }
