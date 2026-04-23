@@ -76,6 +76,8 @@ MonoBehaviour:
   gravity: 0.4
   pushForce: 0.75
   cameraAxisSpeedBoost: 1.2
+  model: {fileID: 3252388512221689886}
+  animator: {fileID: 3238308620186708221}
 --- !u!1001 &2441979931849508175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -124,17 +126,63 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8075456454105170838, guid: 46ebd3cb12b23ca47a99ecb104aea1c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 17.64541
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 46ebd3cb12b23ca47a99ecb104aea1c4, type: 3}
       propertyPath: m_Name
       value: Model
       objectReference: {fileID: 0}
+    - target: {fileID: 3110345944738730373, guid: 46ebd3cb12b23ca47a99ecb104aea1c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -17.64541
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717452858150735929, guid: 46ebd3cb12b23ca47a99ecb104aea1c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 17.645409
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792121299865012651, guid: 46ebd3cb12b23ca47a99ecb104aea1c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 17.645409
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46ebd3cb12b23ca47a99ecb104aea1c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3238308620186708221}
   m_SourcePrefab: {fileID: 100100000, guid: 46ebd3cb12b23ca47a99ecb104aea1c4, type: 3}
 --- !u!4 &2767777196590801572 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 46ebd3cb12b23ca47a99ecb104aea1c4, type: 3}
   m_PrefabInstance: {fileID: 2441979931849508175}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3252388512221689886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 46ebd3cb12b23ca47a99ecb104aea1c4, type: 3}
+  m_PrefabInstance: {fileID: 2441979931849508175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3238308620186708221
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252388512221689886}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc83db2d2d705b049acd20e089c75025, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
