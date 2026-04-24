@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 4541109364569175039}
   - component: {fileID: 4738050852264762676}
   - component: {fileID: 1008066074886275850}
+  - component: {fileID: 7623203074913560393}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -191,7 +192,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 53edb6b3a5159b241bcfa9a86c28a1e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -237,6 +238,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7623203074913560393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2232419478640788962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68df373e8696f6240b9b10c923ed0c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloorTexture
 --- !u!1 &5278107714808343790
 GameObject:
   m_ObjectHideFlags: 0
